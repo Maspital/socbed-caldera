@@ -1,0 +1,41 @@
+- name: Download CALDERA v{{ caldera_version }}
+  git:
+    dest: /opt/caldera
+    clone: yes
+    recursive: yes
+    version: "{{ caldera_version }}"
+    repo: https://github.com/mitre/caldera.git
+    update: no
+   
+- name: Install pip3 (CURRENTLY NOT PINNED!!!)
+  apt:
+    update_cache: yes
+    name: python3-pip
+
+- name: Install CALDERA requirements via PIP
+  pip:
+    requirements: /opt/caldera/requirements.txt
+    
+- name: Download GO v{{ go_version }} (also needed by CALDERA)
+  get_url:
+   url: "https://golang.org/dl/go{{ go_version }}.linux-amd64.tar.gz"
+   dest: /tmp/go.tar.gz
+   checksum: "sha256:{{ go_sha256_sum }}"
+   
+- name: Unzip GO archive to /usr/local/go
+  unarchive:
+    src: /tmp/go.tar.gz
+    dest: /usr/local
+    remote_src: yes
+    
+- name: Add GO to path
+  lineinfile:
+    path: /etc/profile
+    line: export PATH=$PATH:/usr/local/go/bin
+    state: present
+    
+- name: Configure /etc/crontab to start the caldera server on boot
+  lineinfile:
+    path: /etc/crontab
+    line: "@reboot root cd /opt/caldera && python3 server.py --insecure"
+    state: present

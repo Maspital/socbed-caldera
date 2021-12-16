@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C . .\\stepTwelve.ps1;software;if ($?) {      write-host \"[+] Ability 12.C executed successfully.\";}"

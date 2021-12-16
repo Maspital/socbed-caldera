@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C . .\\wipe.ps1;wipe \"m.exe\";wipe \"C:\\Windows\\Temp\\WindowsParentalControlMigration.tmp\";wipe \"C:\\Windows\\Temp\\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML\";if ($?) {      write-host \"[+] Ability 19.A executed successfully.\";}"

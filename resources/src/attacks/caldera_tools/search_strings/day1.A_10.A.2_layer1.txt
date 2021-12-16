@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C write-host \"[*] Restarting Computer\";Restart-Computer -Force;"

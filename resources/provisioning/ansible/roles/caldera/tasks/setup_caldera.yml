@@ -1,0 +1,42 @@
+- name: Add user/pw breach/breach to CALDERA (red team)
+  lineinfile:
+    path: /opt/caldera/conf/default.yml
+    line: "    breach: breach"
+    insertafter: "red: admin"
+    state: present
+    
+- name: Change API key for red team to "breach"
+  lineinfile:
+    path: /opt/caldera/conf/default.yml
+    regexp: '^(.*)api_key_red: ADMIN123$(.*)'
+    line: '\1api_key_red: breach\2'
+    backrefs: yes
+    state: present
+
+- name: Copy "evals" plugin archive to /tmp
+  copy:
+    src: "files/evals.zip"
+    dest: /tmp
+    
+- name: Unzip plugin archive to /opt/caldera/plugins
+  unarchive:
+    src: /tmp/evals.zip
+    dest: /opt/caldera/plugins
+    remote_src: yes
+    
+- name: Include "evals" plugin in CALDERA
+  lineinfile:
+    path: /opt/caldera/conf/default.yml
+    line: "- evals"
+    insertafter: 'plugins:'
+    state: present
+
+# Uncommenting this will add a set of simulated agents to CALDERA,
+# which can be used for testing abilities, operations, etc.
+#    
+#- name: Include "mock" plugin in CALDERA
+#  lineinfile:
+#    path: /opt/caldera/conf/default.yml
+#    line: "- mock"
+#    insertafter: 'plugins:'
+#    state: present

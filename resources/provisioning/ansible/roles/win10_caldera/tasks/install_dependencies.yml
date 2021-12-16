@@ -1,0 +1,8 @@
+- name: Install Google Chrome webbrowser (pinned v{{ chrome_version }})
+  win_chocolatey:
+    name: googlechrome
+    state: present
+    version: "{{ chrome_version }}"
+    pinned: yes
+    ignore_checksums: yes
+

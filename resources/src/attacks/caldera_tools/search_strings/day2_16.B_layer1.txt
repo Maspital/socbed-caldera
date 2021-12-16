@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C . .\\stepSixteen_SID.ps1;siduser;if ($?) {      write-host \"[+] Ability 16.B executed successfully.\";}"

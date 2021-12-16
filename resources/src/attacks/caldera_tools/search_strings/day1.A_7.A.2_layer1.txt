@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C $clip_data=get-clipboard;if ($clip_data.Length -gt 0) {  write-host \"[+] Clipboard data obtained!\\n\";  write-host $clip_data;} else {  write-host \"[!] No clipboard data available!\\n\";}"

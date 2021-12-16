@@ -1,0 +1,1 @@
+"message": "CommandInvocation(Out-Default): \"Out-Default\"\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"@{UserName=BREACH\\client1; SessionId=1}\"

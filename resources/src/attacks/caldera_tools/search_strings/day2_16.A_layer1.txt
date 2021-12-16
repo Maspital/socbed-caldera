@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C . .\\powerview.ps1;get-netdomaincontroller;if ($?) {      write-host \"[+] Ability 16.A executed successfully.\";}"

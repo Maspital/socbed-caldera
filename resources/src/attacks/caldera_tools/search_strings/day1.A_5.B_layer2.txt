@@ -1,0 +1,1 @@
+CommandInvocation(Write-Host): \"Write-Host\"\nParameterBinding(Write-Host): name=\"Object\"; value=\"[+] Persistence 2 invoked.\""

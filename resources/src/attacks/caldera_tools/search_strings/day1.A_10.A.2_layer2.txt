@@ -1,0 +1,1 @@
+"host": {"name": "CLIENT1.breach.local"}, "log": {"level": "information"}, "message": "CommandInvocation(Restart-Computer): \"Restart-Computer\"\nParameterBinding(Restart-Computer): name=\"Force\"; value=\"True\"

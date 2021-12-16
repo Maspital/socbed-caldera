@@ -1,0 +1,10 @@
+- name: Copy powershell script for registering CALDERA agents to Client
+  win_copy:
+    src: "files/register_agent.ps1"
+    dest: C:\BREACH\
+    
+- name: Copy .bat file for starting the above powershell script to Client
+  win_copy:
+    src: "files/agent_startup.bat"
+    dest: C:\BREACH\
+

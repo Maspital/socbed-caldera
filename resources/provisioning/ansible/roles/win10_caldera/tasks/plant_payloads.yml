@@ -1,0 +1,17 @@
+- name: Copy payload folder to Client
+  win_copy:
+    src: "files/SysinternalsSuite.zip"
+    dest: C:\Temp\
+
+- name: Extract payloads to C:\Program Files\SysinternalsSuite
+  win_unzip:
+    src: C:\Temp\SysinternalsSuite.zip
+    dest: C:\Program Files\SysinternalsSuite
+
+- name: Grant all users full control for C:\Program Files\SysinternalsSuite folder (for CALDERA's day2 abilities)
+  win_acl:
+    path: C:\Program Files\SysinternalsSuite
+    user: Users
+    rights: FullControl
+    type: allow
+    state: present

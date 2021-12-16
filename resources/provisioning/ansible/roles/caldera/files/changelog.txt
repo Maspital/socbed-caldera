@@ -1,0 +1,56 @@
+[Variables]: Swapped all mentions of variable "profile_user" with "client1" in:
+	- exfiltration/68e209dd-f354-4adc-8bc6-e85a3e55a7f4.yml
+	- exfiltration/2d18c8ec-4593-49dc-9bf4-11d0673d6ae6.yml
+	- exfiltration/a612311d-a802-48da-bb7f-88a4b9dd7a24.yml
+	- privilege-escalation/89e9dffa-8836-4672-8cf3-bebd006d2a2b.yml
+	- defensive-evasion/68b588bc-002a-42dc-bac7-9189f944065b.yml
+	- defensive-evasion/208b021b-c79a-4176-8ad1-3af99ed50c6f.yml
+	- lateral-movement/00446217-53ca-4749-bacd-f41fe189d36e.yml
+	- stage-capabilities/4f7d21c9-ea31-4943-ad8a-efbbeeccdd7d.yml
+
+[Variables]: Swapped all mentions of variable "profile_user_password" with "breach" in:
+	- lateral-movement/00446217-53ca-4749-bacd-f41fe189d36e.yml
+
+[Variables]: Swapped all mentions of variable "profile_user_day2" with "client2" in:
+	- host-provision/865b6ad9-ba59-435a-bd8f-641052fc077a.yml
+	- execution/e506f811-884d-4992-aacb-514b33a0324f.yml
+	- collection/fc231955-774f-442c-ac0e-e74dfda50c5c.yml
+	
+	
+[Abilities]: Added custom success message to the following abilities:
+	- collection/a81ea4ad-bc9f-49a7-82d4-4466df641487.yml
+	- collection/db28f68d-e8b8-46e6-b680-642570d4b257.yml
+	- credential-access/e7cab9bb-3e3a-4d93-99cc-3593c1dc8c6d.yml
+	- credential-access/267bad86-3f06-49f1-9a3e-6522f2a61e7a.yml
+	- credential-access/4ef6009d-2d62-4bb4-8de9-0458df2e9567.yml
+	- defensive-evasion/9b5b5aec-32ff-4d74-8555-727b50ab15f6.yml
+	- defensive-evasion/208b021b-c79a-4176-8ad1-3af99ed50c6f
+	- devensive-evasion/4a2ad84e-a93a-4b2e-b1f0-c354d6a41278.yml
+	- defensive-evasion/5226e5dc-fc28-43b7-a679-0db49d520402.yml
+	- discovery/646be6c9-f27a-4f5f-be5d-b8a0317e215f.yml
+	- discovery/6f1f4768-7099-45d2-a858-b49dc792234e.yml
+	- discovery/f9c0b150-822f-497b-ad6d-187f24561e9a.yml
+	- discovery/2b5a72b1-01e4-48ae-98b0-2570a7894371.yml
+	- discovery/0cfadbcb-ec21-44ae-adb7-9a23176dd620.yml
+	- discovery/96140694-6d13-40b6-9553-0e63533469f3.yml
+	- discovery/f320eebd-e75b-4194-b529-79e64ad0b9ee.yml
+	- discovery/a34ab8f2-a106-41fb-af0b-cf5382bd18ae.yml
+	- discovery/1c8552c7-f7ed-4523-b640-72d65af5f855.yml
+	- discovery/a42be479-fc26-4d7c-9e63-7a9b74e4c8d2.yml
+	- execution/95564347-e77a-4a89-b08f-dcafa5468f2c.yml
+	- execution/a5daa530-c640-49bc-aa54-6808789a684a.yml
+	- execution/e506f811-884d-4992-aacb-514b33a0324f.yml
+	- exfiltration/68e209dd-f354-4adc-8bc6-e85a3e55a7f4.yml
+	- exfiltration/2d18c8ec-4593-49dc-9bf4-11d0673d6ae6.yml
+	- exfiltration/4840d6dd-da13-401a-be46-05db56f4e1e0.yml
+	- host-provision/865b6ad9-ba59-435a-bd8f-641052fc077a.yml
+	- impact/f820b93d-6176-4a72-a138-a70b0b549c49.yml
+	- lateral-movement/00446217-53ca-4749-bacd-f41fe189d36e.yml
+	
+[Abilities]: Removed certain parts of abilities:
+	- "remove-item upload.ps1 -Force;" in defense-evasion/4bedbd9b-a570-4f9f-b78a-2f7f99ad5e92.yml
+
+
+[Payloads]: The following payloads have been modified:
+	- exe.rcs.aka3.doc; updated for CALDERA 3.0.0
+	- javamtsup.exe; updated for CALDERA 3.0.0

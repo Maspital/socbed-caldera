@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C if (!(test-path -path \"$env:appdata\\Microsoft\\kxwn.lock\")) {  write-host \"[!] kxwn.lock was not found on this host.\";  exit 1;} else {  . .\\timestomp.ps1;  timestomp -dest \"$env:appdata\\Microsoft\\kxwn.lock\";  write-host \"[+] Ability 12.A executed successfully.\";}"

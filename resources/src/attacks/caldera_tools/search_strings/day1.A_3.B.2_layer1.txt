@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C Remove-Item -Path HKCU:\\Software\\Classes\\Folder* -Recurse -Force;if (!(test-path -path HKCU:\\Software\\Classes\\Folder)) {  write-host \"[+] Reg keys removed!\"; }"

@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C Set-Location -path \"C:\\Program Files\\SysinternalsSuite\";if (Test-Path -path \"readme.ps1\") {  . .\\readme.ps1;  Invoke-Persistence -PersistStep 2;  write-host \"[+] Persistence 2 invoked.\";} else {  write-host \"[!] readme.ps1 not found.\";  return 1;}"

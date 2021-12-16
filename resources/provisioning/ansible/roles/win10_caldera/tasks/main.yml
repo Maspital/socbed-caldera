@@ -1,0 +1,4 @@
+- include: install_dependencies.yml
+- include: setup_auto_agent.yml
+- include: plant_payloads.yml
+

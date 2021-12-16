@@ -1,0 +1,1 @@
+"command_line": "powershell.exe -ExecutionPolicy Bypass -C write-host \"[+] Successfully downloaded m.exe\";"

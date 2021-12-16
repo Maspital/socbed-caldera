@@ -1,0 +1,1 @@
+"message": "CommandInvocation(Write-Progress): \"Write-Progress\"\nParameterBinding(Write-Progress): name=\"Activity\"; value=\"Compress-Archive\"\nParameterBinding(Write-Progress): name=\"Status\"; value=\"The archive file 'C:\\Users\\client1\\AppData\\Roaming\\Draft.Zip' creation is in progress...\"\nParameterBinding(Write-Progress): name=\"PercentComplete\"; value=\"100\"

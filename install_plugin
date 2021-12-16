@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ "$#" -ne 1 ] || ! [ -d "$1" ]; then
+  echo "Usage: $0 SOCBED_DIRECTORY" >&2
+  exit 1
+fi
+
+BASEDIR=$(dirname "$0")
+INSTALLDIR="${BASEDIR}/resources/"
+
+printf "Copying files. This shouldn't take long...\n"
+rsync -avq "$INSTALLDIR" "$1"
+printf "Done.\n"
+
