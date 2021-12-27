@@ -36,10 +36,10 @@ attackconsole > use caldera_evaluation
 attackconsole > run
 ```
 This attack will take up to 30 minutes.
-Afterwards, the logs collected by the Log Server will be automatically extracted to the path defined in the attack options, resulting in two log files, `winlogbeat.jsonl` and `syslog.jsonl`
+Afterwards, the logs collected by the Log Server will be automatically extracted to the path defined in the attack options, resulting in two log files, `winlogbeat.jsonl` and `syslog.jsonl`.
 The former is then checked for certain success indicators for each attack, followed by a summary of the entire attack chain.
 
-You can monitor the attack process in greater detail by using CALDERA's web-interface, which you can access via http://192.168.56.31:8888/. This is also the place where you can manually execute attacks or modify parts of them; for more information refere to [CALDERA's documentation](https://caldera.readthedocs.io/en/3.0.0/).
+You can monitor the attack process in greater detail by using CALDERA's web-interface, which you can access via http://192.168.56.31:8888/ (login: breach/breach). This is also the place where you can manually execute attacks or modify parts of them; for more information refere to [CALDERA's documentation](https://caldera.readthedocs.io/en/3.0.0/).
 
 If you want to evaluate previously created log files again, you can do so using the script provided in `src/attacks/caldera_tools/caldera_eval_standalone.py`.
 ```sh
@@ -66,7 +66,7 @@ python3 caldera_eval_standalone.py /tmp/winlogbeat_foo.jsonl search_strings/
 
 ## Options
 
-Within the attackconsole, you can modify certain options for the `caldera_evaluation` attack:
+Within the attackconsole, you can modify certain options of the `caldera_evaluation` attack:
 ```sh
 attackconsole
 attackconsole > use caldera_evaluation
@@ -85,7 +85,7 @@ Attack Options
 |  log_suffix  |         foo          |       Suffix to be appended to created log files      |
 +--------------+----------------------+-------------------------------------------------------+
 ```
-It is not recommended to change the first two options, `caldera_host` and `caldera_port` unless you know what you are doing.
+It is not recommended to change the first two options, `caldera_host` and `caldera_port`, unless you know what you are doing.
 Change the other options as you see fit, for example:
 ```sh
 attackconsole > set keep_logs True
