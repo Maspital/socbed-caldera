@@ -39,7 +39,9 @@ This attack will take up to 30 minutes.
 Afterwards, the logs collected by the Log Server will be automatically extracted to the path defined in the attack options, resulting in two log files, `winlogbeat.jsonl` and `syslog.jsonl`
 The former is then checked for certain success indicators for each attack, followed by a summary of the entire attack chain.
 
-If you want to evaluate previously created log files again, you can do so using the script provided in `.../socbed/src/attacks/caldera_tools/caldera_eval_standalone.py`.
+You can monitor the attack process in greater detail by using CALDERA's web-interface, which you can access via http://192.168.56.31:8888/. This is also the place where you can manually execute attacks or modify parts of them; for more information refere to [CALDERA's documentation](https://caldera.readthedocs.io/en/3.0.0/).
+
+If you want to evaluate previously created log files again, you can do so using the script provided in `src/attacks/caldera_tools/caldera_eval_standalone.py`.
 ```sh
 cd src/attacks/caldera_tools
 python3 caldera_eval_standalone.py -h
