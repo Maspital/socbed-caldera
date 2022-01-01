@@ -9,14 +9,51 @@ To achieve this, [CALDERA](https://github.com/mitre/caldera) is installed on the
 Due to some problems with ansible, these are not yet encrypted, so be aware that your anti-virus software of choice might sound the alarm.
 
 
-This plugin is intended to be used with SOCBED v1.1.3.
-Using another version may or may not have unintended side effects.
+The following guide will walk you through both the installation of SOCBED and of this plugin.
+The plugin is intended to be used with SOCBED v1.1.3.
 ```sh
+# Install VirtualBox and configure the management network interface
+sudo apt install virtualbox virtualbox-ext-pack
+vboxmanage hostonlyif create # should create vboxnet0, else adapt following lines
+vboxmanage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1 --netmask 255.255.255.0
+vboxmanage dhcpserver modify --ifname vboxnet0 --disable
+
+# Install packer v1.6.3
+export VER="1.6.3"
+sudo wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip
+sudo unzip packer_${VER}_linux_amd64.zip -d /usr/local/bin
+
+# Install requirements for the python package "cryptography",
+# see https://cryptography.io/en/latest/installation/
+sudo apt install build-essential libssl-dev libffi-dev python3-dev
+
+# Optional: Install packages for 1337 "message of the day" banner in the attackconsole
+sudo apt install cowsay fortunes
+
+# Create and activate a Python Virtual Environment
+sudo apt install virtualenv
+virtualenv -p python3 ~/.virtualenvs/socbed
+source ~/.virtualenvs/socbed/bin/activate
+
+# Clone SOCBED v1.1.3. You may ignore the detached headstate
+git clone git@github.com:fkie-cad/socbed.git --branch v1.1.3 --depth 1
+
 # Clone this repository
 git clone git@github.com:Maspital/socbed-caldera.git
 
 # Run the installation script, providing the path to your socbed directory
-./socbed-caldera/install_plugin /socbed/directory/
+./socbed-caldera/install_plugin ./socbed/
+
+# Install SOCBED in the virtual environment.
+cd socbed/
+pip install -r requirements.txt
+pip install --editable .
+
+# Delete any possibly remaining SOCBED VMs from previous installations
+./tools/delete_vms
+
+# Build all SOCBED VMs
+./tools/build_vms
 ```
 
 ## Usage
@@ -35,11 +72,11 @@ attackconsole
 attackconsole > use caldera_evaluation
 attackconsole > run
 ```
-This attack will take up to 30 minutes.
+This attack will take up to 40 minutes.
 Afterwards, the logs collected by the Log Server will be automatically extracted to the path defined in the attack options, resulting in two log files, `winlogbeat.jsonl` and `syslog.jsonl`.
 The former is then checked for certain success indicators for each attack, followed by a summary of the entire attack chain.
 
-You can monitor the attack process in greater detail by using CALDERA's web-interface, which you can access via http://192.168.56.31:8888/ (login: breach/breach). This is also the place where you can manually execute attacks or modify parts of them; for more information refere to [CALDERA's documentation](https://caldera.readthedocs.io/en/3.0.0/).
+You can monitor the attack process in greater detail by using CALDERA's web-interface, which you can access via http://192.168.56.31:8888/ (login: breach/breach). This is also the place where you can manually execute attacks or modify parts of them; for more information refer to [CALDERA's documentation](https://caldera.readthedocs.io/en/3.0.0/).
 
 If you want to evaluate previously created log files again, you can do so using the script provided in `src/attacks/caldera_tools/caldera_eval_standalone.py`.
 ```sh
