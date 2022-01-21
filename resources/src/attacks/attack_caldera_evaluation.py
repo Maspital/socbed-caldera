@@ -40,7 +40,7 @@ class CalderaEvaluationAttackOptions(AttackOptions):
     def _set_defaults(self):
         self.caldera_host = "http://192.168.56.31"
         self.caldera_port = "8888"
-        self.keep_logs = False
+        self.keep_logs = True
         self.log_suffix = "foo"
         self.log_dir = tempfile.gettempdir()
 
