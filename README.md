@@ -35,8 +35,8 @@ sudo apt install virtualenv
 virtualenv -p python3 ~/.virtualenvs/socbed
 source ~/.virtualenvs/socbed/bin/activate
 
-# Clone SOCBED v1.1.3. You may ignore the detached headstate
-git clone git@github.com:fkie-cad/socbed.git --branch v1.1.3 --depth 1
+# Clone SOCBED v1.1.4. You may ignore the detached headstate
+git clone git@github.com:fkie-cad/socbed.git --branch v1.1.4 --depth 1
 
 # Clone this repository
 git clone git@github.com:Maspital/socbed-caldera.git
