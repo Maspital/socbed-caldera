@@ -10,7 +10,7 @@ Due to some problems with ansible, these are not yet encrypted, so be aware that
 
 
 The following guide will walk you through both the installation of SOCBED and of this plugin.
-The plugin is intended to be used with SOCBED v1.1.3.
+The plugin is intended to be used with SOCBED v1.1.4.
 ```sh
 # Install VirtualBox and configure the management network interface
 sudo apt install virtualbox virtualbox-ext-pack
