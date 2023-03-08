@@ -1,3 +1,7 @@
+This repository has been archived!
+SOCBED has received a number of breaking changes since the release of this plugin,
+but the files here can nevertheless be used as a template for future efforts.
+
 # CALDERA-plugin for SOCBED
 
 This plugin is intended to extend the functionality of the [SOCBED framework](https://github.com/fkie-cad/socbed) by enabling the user to execute the attack chain presented in [MITREs APT29 Attack Evaluation](https://attackevals.mitre-engenuity.org/enterprise/apt29/).
